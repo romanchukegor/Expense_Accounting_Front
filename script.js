@@ -22,24 +22,24 @@ const addCost = async () => {
   try {
     let whereInput = document.getElementById("content__first_input");
     let howMuchInput = document.getElementById("content__second_input");
-    if(whereInput.value && howMuchInput.value !== ""){
-    const result = await fetch(`${link}/costs`, {
-      method: "POST",
-      headers: fetchHeaders,
-      body: JSON.stringify({
-        text: whereInput.value,
-        cost: howMuchInput.value,
-        date: new Date().toLocaleDateString,
-      }),
-    });
-    const data = await result.json();
-    allCosts.push(data);
-    whereInput.value = "";
-    howMuchInput.value = "";
-    render();
-  } else {
-    return false
-  }
+    if (whereInput.value && howMuchInput.value !== "") {
+      const result = await fetch(`${link}/costs`, {
+        method: "POST",
+        headers: fetchHeaders,
+        body: JSON.stringify({
+          text: whereInput.value,
+          cost: howMuchInput.value,
+          date: new Date().toLocaleDateString,
+        }),
+      });
+      const data = await result.json();
+      allCosts.push(data);
+      whereInput.value = "";
+      howMuchInput.value = "";
+      render();
+    } else {
+      return false;
+    }
   } catch (error) {
     console.log("The request failed");
   }
@@ -80,7 +80,7 @@ const updateEditCost = async (_id) => {
       if (item._id === result._id) {
         item.text = result.text;
         item.cost = result.cost;
-        item.date = result.date
+        item.date = result.date;
       }
     });
     render();
@@ -104,14 +104,12 @@ const cancelEdit = (item) => {
 const editTask = (item) => {
   const { _id, text, cost, date } = item;
   let expense = document.getElementById(`task-${_id}`);
-  
- 
 
   const cancelImage = document.createElement("img");
   const cancelImageButton = document.createElement("div");
   const doneImageButton = document.createElement("div");
   const doneImage = document.createElement("img");
-  const newExpense = document.createElement("div")
+  const newExpense = document.createElement("div");
   const newCost = document.createElement("input");
   const newText = document.createElement("input");
   const newDate = document.createElement("input");
@@ -126,8 +124,8 @@ const editTask = (item) => {
   newDate.id = `date__input-${_id}`;
   newDate.className = `date__input-${_id}`;
   newDate.value = date;
-  newExpense.className = "new-expense"
-  buttonsNewCost.className = "new-cost"
+  newExpense.className = "new-expense";
+  buttonsNewCost.className = "new-cost";
 
   doneImage.src = "images/done.svg";
   doneImageButton.id = `cost_button_done${_id}`;
@@ -154,16 +152,15 @@ const editTask = (item) => {
 render = () => {
   const content = document.getElementById("content-page");
 
-  let sumCosts = document.createElement('h2');
+  let sumCosts = document.createElement("h2");
   let sum = 0;
 
-  allCosts.forEach(element => {
-    sum += element.cost
-  })
-  
-  sumCosts.className = 'sumCosts';
+  allCosts.forEach((element) => {
+    sum += element.cost;
+  });
+
+  sumCosts.className = "sumCosts";
   sumCosts.innerText = `Итого: ${sum} p`;
-  
 
   while (content.firstChild) {
     content.removeChild(content.firstChild);
@@ -211,14 +208,12 @@ render = () => {
     taskButtons.className = "task-buttons";
 
     const textButtons = document.createElement("div");
-    textButtons.append( newDate, newCost);
+    textButtons.append(newDate, newCost);
     textButtons.className = "text-buttons";
     container.appendChild(newText);
     container.appendChild(textButtons);
     container.appendChild(taskButtons);
-    
-    // container.appendChild(newDate);
-    // container.appendChild(newCost);
+
     content.appendChild(container);
     content.appendChild(container);
     content.appendChild(sumCosts);

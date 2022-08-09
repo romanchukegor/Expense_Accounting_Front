@@ -13,7 +13,6 @@ window.onload = async () => {
     allCosts = result.allCosts;
     render();
   } catch (error) {
-    console.log(error);
     console.log("The request failed");
   }
 };
@@ -85,7 +84,6 @@ const updateEditCost = async (_id) => {
     });
     render();
   } catch (error) {
-    console.log(error);
     console.error("Failed to change");
   }
 };
@@ -165,7 +163,6 @@ render = () => {
   while (content.firstChild) {
     content.removeChild(content.firstChild);
   }
-  console.log(allCosts);
   allCosts.forEach((item) => {
     const { text, cost, _id, date } = item;
 

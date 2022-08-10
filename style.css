@@ -1,177 +1,174 @@
 body {
-  background-color:slategrey;
+  background-color: slategrey;
 }
 
 h1 {
-    text-align: center;
+  text-align: center;
 }
 
 .header {
-    display: flex;
+  display: flex;
 }
 
 input {
-    width: 300px;
-    height: 40px;
-    border-radius: 5px;
+  width: 300px;
+  height: 40px;
+  border-radius: 5px;
 }
-
 
 .content {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
-#content-page  {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 30px;
+#content-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
 }
 
 .text-container {
-    display: flex;
-    justify-content: space-between;
-    border: 2px black solid;
-    width: 1000px;
-    margin: 25px;
+  display: flex;
+  justify-content: space-between;
+  border: 2px black solid;
+  width: 1000px;
+  margin: 25px;
 }
 
 p {
-    font-size: 20px;
-    margin: 10px;
+  font-size: 20px;
+  margin: 10px;
 }
 
 .cost-amount {
-    margin-top: 30px;
-
+  margin-top: 30px;
 }
 
 .button-add {
-    width: 300px;
-    height: 25px;
-    margin-top: 45px;
-    margin-left: 50px;
-    font-size: 25px;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-    
-    background-color:seagreen;
+  width: 300px;
+  height: 25px;
+  margin-top: 45px;
+  margin-left: 50px;
+  font-size: 25px;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+
+  background-color: seagreen;
 }
 
 .text-buttons {
-    display: flex;
-    margin: 20px;
+  display: flex;
+  margin: 20px;
 }
 
 .text-buttons p {
-    font-size: 36px;
+  font-size: 36px;
 }
 
 .task-buttons {
-    display: flex;
-    margin-top: 30px;
-} 
+  display: flex;
+  margin-top: 30px;
+}
 
 img {
-    width:36px;
+  width: 36px;
 }
 
 .text-container p {
-    font-size: 36px;
-    
+  font-size: 36px;
 }
 
-.new-expense{
-    display: flex;
-    border: 2px solid black;
-    min-width: 1000px;
-    margin: 25px;
-    height: 102px;
+.new-expense {
+  display: flex;
+  border: 2px solid black;
+  min-width: 1000px;
+  margin: 25px;
+  height: 102px;
 }
 
 .new-expense input {
-    width: 270px;
-    margin-top: 30px;
-    margin-left: 20px;
+  width: 270px;
+  margin-top: 30px;
+  margin-left: 20px;
 }
 
 .new-cost {
-   display: flex;
-   margin-top: 30px;
-   margin-left: 30px;
+  display: flex;
+  margin-top: 30px;
+  margin-left: 30px;
 }
 
 .sum-costs {
-    display: flex;
+  display: flex;
 }
 
 @media (max-width: 1000px) {
-    .text-container {
-        width: 700px;
-    }
-    .header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+  .text-container {
+    width: 700px;
+  }
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .header input {
-        width: 500px;
-    }
-    .new-expense {
-        min-width: 700px;
-    }
-    .new-expense input {
-        width: 170px;
-        margin-top: 30px;
-        margin-left: 20px;
-    }
+  .header input {
+    width: 500px;
+  }
+  .new-expense {
+    min-width: 700px;
+  }
+  .new-expense input {
+    width: 170px;
+    margin-top: 30px;
+    margin-left: 20px;
+  }
 }
 
 @media (max-width: 700px) {
-    .text-container {
-        width: 500px;
-        flex-direction: column;
-        align-items: center;
-    }
-    .new-expense {
-        min-width: 500px;
-    }
-    .new-expense input {
-        width: 100px;
-        margin-top: 30px;
-        margin-left: 20px;
-    }
+  .text-container {
+    width: 500px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .new-expense {
+    min-width: 500px;
+  }
+  .new-expense input {
+    width: 100px;
+    margin-top: 30px;
+    margin-left: 20px;
+  }
 }
 
 @media (max-width: 500px) {
-    .text-container {
-        width: 300px;
-        flex-direction: column;
-        align-items: center;
-    }
+  .text-container {
+    width: 300px;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .text-buttons {
-        flex-direction: column;
-    }
+  .text-buttons {
+    flex-direction: column;
+  }
 
-    .header input {
-        width: 300px;
-    }
+  .header input {
+    width: 300px;
+  }
 
-    .button-add {
-        width: 200px;
-        margin: 20px;
-    }
+  .button-add {
+    width: 200px;
+    margin: 20px;
+  }
 
-    .new-expense {
-        min-width: 300px;
-    }
-    .new-expense input {
-        width: 50px;
-        margin-top: 30px;
-        margin-left: 20px;
-    }
+  .new-expense {
+    min-width: 300px;
+  }
+  .new-expense input {
+    width: 50px;
+    margin-top: 30px;
+    margin-left: 20px;
+  }
 }

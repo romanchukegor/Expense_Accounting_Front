@@ -166,7 +166,6 @@ render = () => {
   allCosts.forEach((item, index) => {
     const { text, cost, _id, date } = item;
 
-
     const container = document.createElement("div");
     container.id = `task-${_id}`;
     container.className = "text-container";
@@ -174,13 +173,12 @@ render = () => {
     const newText = document.createElement("p");
     const newDate = document.createElement("p");
     const newCost = document.createElement("p");
-    const costAmount = document.createElement("p")
-    costAmount.className = "cost-amount"
+    const costAmount = document.createElement("p");
+    costAmount.className = "cost-amount";
     newText.innerText = text;
     newDate.innerText = date;
     newCost.innerText = `${cost} р.`;
-    costAmount.innerText = `${index + 1})`
-    
+    costAmount.innerText = `${index + 1})`;
 
     const imageEditButton = document.createElement("div");
     imageEditButton.id = `${_id}`;
@@ -212,7 +210,7 @@ render = () => {
     const textButtons = document.createElement("div");
     textButtons.append(newText, newDate, newCost);
     textButtons.className = "text-buttons";
-    container.appendChild(costAmount)
+    container.appendChild(costAmount);
     container.appendChild(textButtons);
     container.appendChild(taskButtons);
 

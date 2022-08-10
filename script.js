@@ -143,7 +143,7 @@ const editTask = (item) => {
 
   buttonsNewCost.append(doneImageButton);
   buttonsNewCost.append(cancelImageButton);
-  newExpense.append(newText, newCost, newDate, buttonsNewCost);
+  newExpense.append(newText, newDate, newCost, buttonsNewCost);
   expense.replaceWith(newExpense);
 };
 
@@ -157,14 +157,15 @@ render = () => {
     sum += element.cost;
   });
 
-  sumCosts.className = "sumCosts";
+  sumCosts.className = "sum-costs";
   sumCosts.innerText = `Итого: ${sum} p`;
 
   while (content.firstChild) {
     content.removeChild(content.firstChild);
   }
-  allCosts.forEach((item) => {
+  allCosts.forEach((item, index) => {
     const { text, cost, _id, date } = item;
+
 
     const container = document.createElement("div");
     container.id = `task-${_id}`;
@@ -173,9 +174,13 @@ render = () => {
     const newText = document.createElement("p");
     const newDate = document.createElement("p");
     const newCost = document.createElement("p");
+    const costAmount = document.createElement("p")
+    costAmount.className = "cost-amount"
     newText.innerText = text;
     newDate.innerText = date;
     newCost.innerText = `${cost} р.`;
+    costAmount.innerText = `${index + 1})`
+    
 
     const imageEditButton = document.createElement("div");
     imageEditButton.id = `${_id}`;
@@ -205,13 +210,12 @@ render = () => {
     taskButtons.className = "task-buttons";
 
     const textButtons = document.createElement("div");
-    textButtons.append(newDate, newCost);
+    textButtons.append(newText, newDate, newCost);
     textButtons.className = "text-buttons";
-    container.appendChild(newText);
+    container.appendChild(costAmount)
     container.appendChild(textButtons);
     container.appendChild(taskButtons);
 
-    content.appendChild(container);
     content.appendChild(container);
     content.appendChild(sumCosts);
   });

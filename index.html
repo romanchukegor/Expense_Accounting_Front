@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="style.css" rel="stylesheet" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta charset="utf-8" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <h1>Учет моих расходов</h1>
+    <div class="content">
+      <div class="header">
+        <div>
+          <p>Куда было потрачено:</p>
+          <input type="text" id="content__first_input" />
+        </div>
+        <div>
+          <p>Сколько было потрачено:</p>
+          <input type="text" id="content__second_input" />
+        </div>
+        <div>
+          <div onclick="addCost()" class="button-add">ДОБАВИТЬ</div>
+        </div>
+      </div>
+    </div>
+    <div id="content-page"></div>
+  </body>
+</html>
